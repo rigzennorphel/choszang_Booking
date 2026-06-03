@@ -1,0 +1,39 @@
+/**
+ * =====================================
+ * FILE: app/globals.css
+ * PURPOSE: Global Tailwind layers — base styles, selection, background grid, utilities.
+ * RELATED: Imported once in app/layout.tsx; tokens defined in tailwind.config.ts.
+ * =====================================
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================
+   BASE LAYER
+   Document-wide defaults
+   ===================================== */
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  ::selection {
+    @apply bg-cab/30 text-white;
+  }
+
+  body {
+    @apply bg-grid-fade bg-[length:24px_24px];
+  }
+}
+
+/* =====================================
+   UTILITIES LAYER
+   Reusable helper classes
+   ===================================== */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
