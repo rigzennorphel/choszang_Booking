@@ -17,6 +17,11 @@
 @layer base {
   :root {
     color-scheme: dark;
+    --color-highlight: #f5b301;
+    --color-highlight-dark: #d99a00;
+    --color-highlight-light: #ffd54a;
+    --theme-color: var(--color-highlight);
+    accent-color: var(--color-highlight);
   }
 
   ::selection {

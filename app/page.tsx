@@ -2,14 +2,16 @@
  * =====================================
  * FILE: app/page.tsx
  * PURPOSE: Home page route — composes all main landing sections in order.
- * RELATED: Route "/" — Hero, Fleet, Reviews, Download strip (app layout wraps Header/Footer).
+ * RELATED: Route "/" — Hero, Gallery, Packages, Fleet, Reviews (app layout wraps Header/Footer).
  * =====================================
  */
 
 import { Hero } from "@/components/Hero";
+import { Gallery } from "@/components/Gallery";
+import { Packages } from "@/components/Packages";
 import { Fleet } from "@/components/Fleet";
 import { Reviews } from "@/components/Reviews";
-import { DownloadStrip } from "@/components/DownloadStrip";
+import { HomeClosingQuote } from "@/components/HomeClosingQuote";
 
 /**
  * HomePage — default export for the site root ("/").
@@ -24,6 +26,16 @@ export default function HomePage() {
       <Hero />
 
       {/* =====================================
+          GALLERY SECTION
+          ===================================== */}
+      <Gallery />
+
+      {/* =====================================
+          PACKAGES SECTION
+          ===================================== */}
+      <Packages />
+
+      {/* =====================================
           FLEET / SERVICES SECTION
           ===================================== */}
       <Fleet />
@@ -34,9 +46,9 @@ export default function HomePage() {
       <Reviews />
 
       {/* =====================================
-          APP DOWNLOAD CTA STRIP
+          CLOSING QUOTE
           ===================================== */}
-      <DownloadStrip />
+      <HomeClosingQuote />
     </>
   );
 }

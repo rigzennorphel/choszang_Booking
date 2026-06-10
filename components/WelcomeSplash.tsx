@@ -27,7 +27,7 @@ type Phase = "show" | "fade" | "hidden";
 export function WelcomeSplash() {
   const [phase, setPhase] = useState<Phase>("show");
   const { title, quote, durationMs } = site.welcome;
-  const fadeMs = 500;
+  const fadeMs = 300;
 
   /* =====================================
      SPLASH TIMING LOGIC

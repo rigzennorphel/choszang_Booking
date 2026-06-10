@@ -24,12 +24,12 @@ const quotes = [
     name: "Priya N.",
     role: "Traveller, Mumbai",
   },
-  {
+  /*{
     quote:
       "We needed airport pickup at odd hours for a group of six. Clear WhatsApp coordination and a spotless Innova.",
     name: "Thomas K.",
     role: "Tour organiser, Germany",
-  },
+  },*/
   {
     quote:
       "No surprise charges for Khardung La and Nubra — route and inclusions were spelled out before we paid.",

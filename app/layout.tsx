@@ -24,7 +24,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { TopBanner } from "@/components/TopBanner";
 import { WelcomeSplash } from "@/components/WelcomeSplash";
+import { HashScrollHandler } from "@/components/HashScrollHandler";
 import { site } from "@/lib/site";
+import { themeColors } from "@/lib/theme";
 
 /* =====================================
    FONT LOADING
@@ -47,12 +49,20 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: `${site.name} — Book a taxi in Ladakh`,
   description: site.description,
+  icons: {
+    icon: [
+      { url: "/favicon.png?v=2", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48.png?v=2", sizes: "48x48", type: "image/png" },
+    ],
+    shortcut: "/favicon.png?v=2",
+    apple: [{ url: "/apple-icon.png?v=2", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0e17",
+  themeColor: themeColors.highlight,
 };
 
 /**
@@ -66,11 +76,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.png?v=2" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon-48.png?v=2" type="image/png" sizes="48x48" />
+        <link rel="apple-touch-icon" href="/apple-icon.png?v=2" sizes="180x180" />
+        <link rel="shortcut icon" href="/favicon.png?v=2" />
+      </head>
       <body
         className={`${inter.variable} ${outfit.variable} min-h-screen bg-night font-sans text-ink-100 antialiased`}
       >
         {/* Welcome overlay on first paint (client component) */}
         <WelcomeSplash />
+        <HashScrollHandler />
 
         <div className="relative flex min-h-screen flex-col">
           {/* Decorative full-viewport gradient (non-interactive) */}

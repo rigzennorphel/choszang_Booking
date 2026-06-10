@@ -12,6 +12,7 @@
  */
 
 import type { Config } from "tailwindcss";
+import { themeColors } from "./lib/theme";
 
 const config: Config = {
   /* =====================================
@@ -37,7 +38,7 @@ const config: Config = {
 
       /* =====================================
          BRAND COLORS
-         ink = neutrals, cab = accent yellow, night = page background
+         ink = neutrals, cab = highlight/theme accent, night = page background
          ===================================== */
       colors: {
         ink: {
@@ -54,11 +55,11 @@ const config: Config = {
           950: "#12151c",
         },
         cab: {
-          DEFAULT: "#f5b301",
-          dark: "#d99a00",
-          light: "#ffd54a",
+          DEFAULT: themeColors.highlight,
+          dark: themeColors.highlightDark,
+          light: themeColors.highlightLight,
         },
-        night: "#0a0e17",
+        night: themeColors.background,
       },
 
       /* =====================================
