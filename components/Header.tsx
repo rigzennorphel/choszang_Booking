@@ -17,6 +17,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BrandWordmark } from "@/components/BrandWordmark";
+import { MobileNav } from "@/components/MobileNav";
 import { site } from "@/lib/site";
 
 /* =====================================
@@ -33,7 +34,7 @@ const nav = [
 
 /**
  * Header — sticky top bar below TopBanner (see layout.tsx).
- * Desktop: centered nav. Mobile: hamburger via native <details> (no extra JS).
+ * Desktop: centered nav. Mobile: hamburger drawer (closes on link tap).
  */
 export function Header() {
   return (
@@ -106,43 +107,7 @@ export function Header() {
             Call now
           </a>
 
-          {/* Mobile navigation — expands below summary */}
-          <details className="relative md:hidden">
-            <summary className="flex cursor-pointer list-none items-center justify-center rounded-full border border-white/10 bg-white/5 p-2.5 text-white marker:hidden [&::-webkit-details-marker]:hidden">
-              <span className="sr-only">Open menu</span>
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </summary>
-            <div className="absolute right-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-2xl border border-white/10 bg-night/95 py-2 shadow-card backdrop-blur-xl">
-              {nav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block px-4 py-2.5 text-base text-ink-200 transition hover:bg-white/5 hover:text-white"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <a
-                href={`tel:${site.phoneTel}`}
-                className="block border-t border-white/10 px-4 py-2.5 text-base text-cab-light"
-              >
-                Call {site.phoneDisplay}
-              </a>
-            </div>
-          </details>
+          <MobileNav nav={nav} />
         </div>
       </div>
     </header>
