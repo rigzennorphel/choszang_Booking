@@ -69,7 +69,7 @@ export const site = {
   /** Thin top banner — set enabled: false to hide */
   banner: {
     enabled: true,
-    message: "Season open — Leh airport, Nubra & Pangong trips. Book early for fixed fares.",
+    message: "Season open — Leh airport, Nubra & Pangong trips etc.",
     ctaLabel: "Call now",
   },
   /** Short splash on first visit — duration in ms */
@@ -82,7 +82,7 @@ export const site = {
   /** About page copy — paragraphs, highlights, closing, and quote */
   about: {
     paragraphs: [
-      "Hi, Welcome to our online taxi booking service. We are committed to providing safe, comfortable, reliable, Great Customer Experience and affordable transportation for every journey.",
+      "Ju-ley Hi, Welcome to our online taxi booking service in Ladakh. We are committed to providing safe, comfortable, reliable, Great Customer Experience and affordable transportation for every journey.",
       "This platform is with 5+ years of professional driving and customer service experience. Over the years, we have earned the trust of our customers through punctuality, professionalism, and a strong focus on passenger safety.",
       "Your safety is our highest priority. Our vehicle is regularly maintained and inspected to ensure a secure and comfortable travel experience. We follow safe driving practices and strive to provide every passenger with peace of mind throughout their journey.",
       "We make your travel planning easy with a simple online booking system. From local rides and airport transfers to sightseeing tours and long-distance trips, we are committed to providing a safe, comfortable, and enjoyable journey every time.",

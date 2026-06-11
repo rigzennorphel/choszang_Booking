@@ -15,8 +15,7 @@
  */
 
 import Link from "next/link";
-import Image from "next/image";
-import { BrandWordmark } from "@/components/BrandWordmark";
+import { HeaderBrand } from "@/components/HeaderBrand";
 import { MobileNav } from "@/components/MobileNav";
 import { site } from "@/lib/site";
 
@@ -38,25 +37,14 @@ const nav = [
  */
 export function Header() {
   return (
-    <header className="border-b border-white/5 bg-night/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-[4.25rem] max-w-6xl flex-nowrap items-center gap-2 px-3 sm:h-[4.75rem] sm:gap-3 sm:px-6 lg:h-20 lg:gap-4 lg:px-8">
+    <header className="bg-night/80 backdrop-blur-xl">
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center px-2 py-2.5 md:min-h-[5.25rem] md:flex-row md:items-center md:gap-3 md:px-6 md:py-2 lg:min-h-[5.75rem] lg:gap-4 lg:px-8">
         {/* =====================================
-            LOGO / HOME LINK
+            LOGO / HOME LINK (centered on mobile)
             ===================================== */}
-        <Link
-          href="/"
-          className="inline-flex min-w-0 shrink items-center gap-2 font-display text-base font-semibold tracking-tight text-white sm:gap-2.5 sm:text-lg lg:gap-3 lg:text-2xl"
-        >
-          <Image
-            src={site.logoSrc}
-            alt=""
-            width={60}
-            height={60}
-            className="h-10 w-10 shrink-0 rounded-full object-cover sm:h-12 sm:w-12 lg:h-[60px] lg:w-[60px]"
-            priority
-          />
-          <BrandWordmark className="hidden truncate sm:inline" />
-        </Link>
+        <div className="flex w-full justify-center px-10 md:w-auto md:justify-start md:px-0">
+          <HeaderBrand />
+        </div>
 
         {/* =====================================
             NAVIGATION (desktop)
@@ -80,20 +68,7 @@ export function Header() {
         {/* =====================================
             CALL-TO-ACTION & MOBILE MENU
             ===================================== */}
-        <div className="ml-auto flex shrink-0 flex-nowrap items-center gap-1.5 sm:gap-2">
-          {/* Mobile / small tablet: phone + Call now in one compact pill */}
-          <a
-            href={`tel:${site.phoneTel}`}
-            className="inline-flex shrink-0 items-center whitespace-nowrap rounded-full bg-cab px-2.5 py-2 text-[11px] font-semibold leading-none text-night shadow-glow transition hover:bg-cab-light sm:px-3 sm:py-2.5 sm:text-xs md:hidden"
-          >
-            <span>Call now</span>
-            <span className="mx-1 opacity-70" aria-hidden>
-              ·
-            </span>
-            <span>{site.phoneDisplay}</span>
-          </a>
-
-          {/* md+: phone number and Call now as separate buttons, always one row */}
+        <div className="absolute right-1.5 top-1/2 flex shrink-0 -translate-y-1/2 flex-nowrap items-center gap-2 md:static md:translate-y-0 md:ml-auto">
           <a
             href={`tel:${site.phoneTel}`}
             className="hidden shrink-0 items-center whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs font-medium text-ink-100 transition hover:border-cab/40 hover:bg-white/10 md:inline-flex lg:px-3 lg:py-2 lg:text-sm xl:text-base"

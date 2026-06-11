@@ -22,12 +22,12 @@ export function TopBanner() {
       role="region"
       aria-label="Announcement"
     >
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center sm:justify-between sm:px-6 sm:py-2.5 lg:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col items-stretch gap-1.5 overflow-hidden px-3 py-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-3 sm:gap-y-1 sm:px-6 sm:py-2.5 lg:px-8">
         {/* =====================================
             TOP BANNER — MESSAGE
             ===================================== */}
-        <p className="text-xs font-medium leading-snug text-ink-100 sm:text-sm">
-          <span className="mr-1.5 inline-block rounded bg-cab/25 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-cab-light sm:text-[11px]">
+        <p className="min-w-0 text-balance break-words text-center text-[11px] font-medium leading-snug text-ink-100 sm:text-left sm:text-sm">
+          <span className="mr-1.5 inline-block shrink-0 rounded bg-cab/25 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-cab-light sm:text-[11px]">
             New
           </span>
           {banner.message}
@@ -39,9 +39,9 @@ export function TopBanner() {
             ===================================== */}
         <a
           href={`tel:${site.phoneTel}`}
-          className="shrink-0 text-xs font-semibold text-cab-light underline-offset-2 transition hover:text-cab hover:underline sm:text-sm"
+          className="shrink-0 self-center text-center text-[11px] font-semibold text-cab-light underline-offset-2 transition hover:text-cab hover:underline sm:self-auto sm:text-sm"
         >
-          {banner.ctaLabel} →
+          {banner.ctaLabel}
         </a>
       </div>
     </div>

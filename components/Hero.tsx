@@ -30,12 +30,12 @@ export function Hero() {
       : undefined;
 
   return (
-    <section className="relative overflow-hidden px-2 pb-16 pt-1 sm:px-4 sm:pb-24 sm:pt-2 lg:px-6 lg:pb-32">
+    <section className="relative overflow-hidden px-2 pb-16 pt-0 sm:px-4 sm:pb-24 lg:px-6 lg:pb-32">
       {/* =====================================
           HERO — BACKGROUND VIDEO / IMAGE
           Video preferred; falls back to image or gradient
           ===================================== */}
-      <div className="absolute inset-x-2 top-1 bottom-6 overflow-hidden rounded-3xl border border-white/10 sm:inset-x-4 sm:top-2 sm:bottom-8 lg:inset-x-6 lg:bottom-12">
+      <div className="absolute inset-x-2 top-0 bottom-6 overflow-hidden rounded-3xl border border-t-0 border-white/10 sm:inset-x-4 sm:bottom-8 lg:inset-x-6 lg:bottom-12">
         {site.homePhotoBanner.videoSrc ? (
           <video
             autoPlay
@@ -67,30 +67,40 @@ export function Hero() {
       <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-cab/10 blur-3xl" aria-hidden />
       <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-cyan-500/5 blur-3xl" aria-hidden />
 
-      <div className="relative z-10 mx-auto max-w-3xl">
+      <div className="relative z-10 mx-auto max-w-3xl px-4 pt-10 pb-6 sm:px-6 sm:pt-14 sm:pb-8 lg:px-8 lg:pt-16">
         {/* =====================================
             HERO — HEADLINE & DESCRIPTION
             ===================================== */}
-        <h1 className="font-display text-balance text-4xl font-bold leading-[1.1] tracking-tight text-white/85 drop-shadow-lg sm:text-5xl lg:text-6xl">
+        <h1 className="font-display text-balance break-words text-3xl font-bold leading-[1.15] tracking-tight text-white/85 drop-shadow-lg sm:text-5xl sm:leading-[1.1] lg:text-6xl">
           Book a car for{" "}
           <span className="bg-gradient-to-r from-cab/90 via-cab-light/90 to-amber-200/90 bg-clip-text text-transparent drop-shadow-sm">
             Ladakh&apos;s roads &amp; passes
           </span>
         </h1>
-        <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-white/65 drop-shadow-md sm:text-lg">
+        <p className="mt-5 max-w-xl text-pretty break-words text-sm leading-relaxed text-white/65 drop-shadow-md sm:text-base sm:leading-relaxed lg:text-lg">
           {site.description}
         </p>
 
         {/* =====================================
             HERO — PRIMARY CTA
-            External link to WhatsApp (no API — client-side navigation)
+            Book now (WhatsApp); Call now + phone directly below on mobile
             ===================================== */}
-        <div className="mt-8 flex flex-wrap items-center gap-4">
+        <div className="mt-8 flex flex-col items-start gap-2.5">
           <a
             href={site.whatsappHref}
             className="inline-flex items-center justify-center rounded-full bg-cab px-6 py-3 text-sm font-semibold text-night shadow-glow transition hover:bg-cab-light"
           >
             Book now
+          </a>
+          <a
+            href={`tel:${site.phoneTel}`}
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-cab px-6 py-3 text-sm font-semibold text-night shadow-glow transition hover:bg-cab-light"
+          >
+            <span className="shrink-0">Call now</span>
+            <span className="mx-1 shrink-0 opacity-70" aria-hidden>
+              ·
+            </span>
+            <span className="shrink-0">{site.phoneDisplay}</span>
           </a>
         </div>
 
@@ -98,7 +108,7 @@ export function Hero() {
             HERO — TRUST METRICS
             Static marketing figures (not loaded from a database)
             ===================================== */}
-        <dl className="mt-12 grid max-w-md grid-cols-3 gap-4 border-t border-white/10 pt-8 sm:gap-8">
+        <dl className="mt-10 grid max-w-md grid-cols-3 gap-2 border-t border-white/10 pt-6 sm:mt-12 sm:gap-4 sm:pt-8 lg:gap-8">
           <div>
             <dt className="text-xs font-medium uppercase tracking-wider text-white/50">
               Avg. reply

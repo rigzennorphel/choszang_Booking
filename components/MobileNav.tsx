@@ -31,7 +31,7 @@ export function MobileNav({ nav }: { nav: NavItem[] }) {
 
   return (
     <details ref={detailsRef} className="relative md:hidden">
-      <summary className="flex cursor-pointer list-none items-center justify-center rounded-full border border-white/10 bg-white/5 p-2.5 text-white marker:hidden [&::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer list-none items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white marker:hidden sm:p-2.5 [&::-webkit-details-marker]:hidden">
         <span className="sr-only">Open menu</span>
         <svg
           className="h-5 w-5"
@@ -48,13 +48,13 @@ export function MobileNav({ nav }: { nav: NavItem[] }) {
           />
         </svg>
       </summary>
-      <div className="absolute right-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-2xl border border-white/10 bg-night/95 py-2 shadow-card backdrop-blur-xl">
+      <div className="absolute left-1/2 top-full z-50 mt-2 w-52 -translate-x-1/2 overflow-hidden rounded-2xl border border-white/10 bg-night/95 py-2 text-center shadow-card backdrop-blur-xl">
         {nav.map((item) => (
           <Link
             key={item.href}
             href={item.href}
             onClick={closeMenu}
-            className="block px-4 py-2.5 text-base text-ink-200 transition hover:bg-white/5 hover:text-white"
+            className="block px-4 py-2.5 text-center text-base text-ink-200 transition hover:bg-white/5 hover:text-white"
           >
             {item.label}
           </Link>
@@ -62,7 +62,7 @@ export function MobileNav({ nav }: { nav: NavItem[] }) {
         <a
           href={`tel:${site.phoneTel}`}
           onClick={closeMenu}
-          className="block border-t border-white/10 px-4 py-2.5 text-base text-cab-light"
+          className="block border-t border-white/10 px-4 py-2.5 text-center text-base text-cab-light"
         >
           Call {site.phoneDisplay}
         </a>
