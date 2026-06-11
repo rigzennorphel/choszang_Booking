@@ -24,19 +24,19 @@ export function HeaderBrand() {
   return (
     <Link
       href="/"
-      className="inline-flex min-w-0 shrink-0 items-center justify-center gap-2 font-display font-semibold tracking-tight text-white md:justify-start sm:gap-3 lg:gap-3.5"
+      className="inline-flex min-w-0 shrink-0 items-center justify-center gap-1 font-display font-semibold tracking-tight text-white md:justify-start sm:gap-3 lg:gap-3.5"
     >
       <Image
         src={site.logoSrc}
         alt=""
         width={72}
         height={72}
-        className="h-14 w-14 shrink-0 rounded-full object-cover sm:h-16 sm:w-16 lg:h-[72px] lg:w-[72px]"
+        className="h-12 w-12 shrink-0 rounded-full object-cover sm:h-16 sm:w-16 lg:h-[72px] lg:w-[72px]"
         priority
       />
       <span
-        className={`overflow-hidden whitespace-nowrap text-xl transition-[max-width,opacity,margin] duration-300 ease-out sm:text-2xl lg:text-4xl ${
-          scrolled ? "max-w-0 opacity-0" : "max-w-[18rem] opacity-100 sm:max-w-[21rem] lg:max-w-[26rem]"
+        className={`overflow-hidden whitespace-nowrap text-lg transition-[max-width,opacity,margin] duration-300 ease-out sm:text-2xl lg:text-4xl ${
+          scrolled ? "max-w-0 opacity-0" : "max-w-[16rem] opacity-100 sm:max-w-[21rem] lg:max-w-[26rem]"
         }`}
         aria-hidden={scrolled}
       >

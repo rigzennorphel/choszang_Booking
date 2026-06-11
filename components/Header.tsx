@@ -42,7 +42,7 @@ export function Header() {
         {/* =====================================
             LOGO / HOME LINK (centered on mobile)
             ===================================== */}
-        <div className="flex w-full justify-center px-10 md:w-auto md:justify-start md:px-0">
+        <div className="flex w-full justify-center pl-0.5 pr-5 md:w-auto md:justify-start md:px-0">
           <HeaderBrand />
         </div>
 
@@ -68,7 +68,7 @@ export function Header() {
         {/* =====================================
             CALL-TO-ACTION & MOBILE MENU
             ===================================== */}
-        <div className="absolute right-1.5 top-1/2 flex shrink-0 -translate-y-1/2 flex-nowrap items-center gap-2 md:static md:translate-y-0 md:ml-auto">
+        <div className="absolute right-10 top-1/2 flex shrink-0 -translate-y-1/2 flex-nowrap items-center gap-2 md:static md:translate-y-0 md:mr-0 md:ml-auto">
           <a
             href={`tel:${site.phoneTel}`}
             className="hidden shrink-0 items-center whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs font-medium text-ink-100 transition hover:border-cab/40 hover:bg-white/10 md:inline-flex lg:px-3 lg:py-2 lg:text-sm xl:text-base"
